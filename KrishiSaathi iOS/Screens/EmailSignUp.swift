@@ -14,6 +14,7 @@ struct EmailSignUp: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @State var username: String = ""
+    @State private var navigateToHomeScreen = false
     
     var body: some View {
         VStack{
@@ -55,6 +56,9 @@ struct EmailSignUp: View {
                     .padding(.horizontal)
             }
         }
+        .fullScreenCover(isPresented: $navigateToHomeScreen, content: {
+            LogOut()
+        })
     }
     
     func registerUser(){
@@ -64,6 +68,8 @@ struct EmailSignUp: View {
             }
             else{
                 guard let uid = result?.user.uid else { return }
+                UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+                navigateToHomeScreen = true
                 print(uid)
             }
         }

@@ -8,11 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var userData : ViewModel
+    
+    func retrieveData(){
+        userData.isUserLoggedIn = UserDefaults.standard.bool(forKey: "isUserLoggedIn")
+    }
+
+    
     var body: some View {
-        VStack {
-            EmailSignUp()
+        if UserDefaults.standard.bool(forKey: "isUserLoggedIn") {
+            LogOut()
+                .onAppear{
+//                    retrieveData()
+                }
+            
+        }else{
+            EmailLogIn()
         }
-        .padding()
     }
 }
 
