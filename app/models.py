@@ -30,7 +30,7 @@ class User(Base):
     
     username = Column(String, unique = True,nullable=True)
     email = Column(String, unique=True, index=True, nullable=False)
-    password = Column(String, nullable=False)
+    password = Column(String)
     created_at = Column(TIMESTAMP(timezone=True),
                        nullable=False, server_default=func.now(), default=datetime.now())
     last_edited = Column(TIMESTAMP(timezone=True),
