@@ -14,6 +14,8 @@
 		B95AE64E2AC19EB900E73C9F /* KrishiSaathi_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95AE64D2AC19EB900E73C9F /* KrishiSaathi_iOSTests.swift */; };
 		B95AE6582AC19EB900E73C9F /* KrishiSaathi_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95AE6572AC19EB900E73C9F /* KrishiSaathi_iOSUITests.swift */; };
 		B95AE65A2AC19EB900E73C9F /* KrishiSaathi_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95AE6592AC19EB900E73C9F /* KrishiSaathi_iOSUITestsLaunchTests.swift */; };
+		B95AE6672AC1A3ED00E73C9F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B95AE6662AC1A3ED00E73C9F /* GoogleService-Info.plist */; };
+		B95AE66A2AC1A4A500E73C9F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B95AE6692AC1A4A500E73C9F /* FirebaseAuth */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,7 @@
 		B95AE6532AC19EB900E73C9F /* KrishiSaathi iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KrishiSaathi iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B95AE6572AC19EB900E73C9F /* KrishiSaathi_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KrishiSaathi_iOSUITests.swift; sourceTree = "<group>"; };
 		B95AE6592AC19EB900E73C9F /* KrishiSaathi_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KrishiSaathi_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B95AE6662AC1A3ED00E73C9F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B95AE66A2AC1A4A500E73C9F /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +98,7 @@
 		B95AE63B2AC19EB700E73C9F /* KrishiSaathi iOS */ = {
 			isa = PBXGroup;
 			children = (
+				B95AE6662AC1A3ED00E73C9F /* GoogleService-Info.plist */,
 				B95AE63C2AC19EB700E73C9F /* KrishiSaathi_iOSApp.swift */,
 				B95AE63E2AC19EB700E73C9F /* ContentView.swift */,
 				B95AE6402AC19EB900E73C9F /* Assets.xcassets */,
@@ -143,6 +148,9 @@
 			dependencies = (
 			);
 			name = "KrishiSaathi iOS";
+			packageProductDependencies = (
+				B95AE6692AC1A4A500E73C9F /* FirebaseAuth */,
+			);
 			productName = "KrishiSaathi iOS";
 			productReference = B95AE6392AC19EB700E73C9F /* KrishiSaathi iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +223,9 @@
 				Base,
 			);
 			mainGroup = B95AE6302AC19EB700E73C9F;
+			packageReferences = (
+				B95AE6682AC1A4A500E73C9F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = B95AE63A2AC19EB700E73C9F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,6 +244,7 @@
 			files = (
 				B95AE6442AC19EB900E73C9F /* Preview Assets.xcassets in Resources */,
 				B95AE6412AC19EB900E73C9F /* Assets.xcassets in Resources */,
+				B95AE6672AC1A3ED00E73C9F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +595,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B95AE6682AC1A4A500E73C9F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B95AE6692AC1A4A500E73C9F /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B95AE6682AC1A4A500E73C9F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B95AE6312AC19EB700E73C9F /* Project object */;
 }
