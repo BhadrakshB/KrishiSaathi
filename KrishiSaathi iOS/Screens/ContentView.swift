@@ -17,13 +17,13 @@ struct ContentView: View {
     
     var body: some View {
         if UserDefaults.standard.bool(forKey: "isUserLoggedIn") {
-            LogOut()
+            TabsView()
                 .onAppear{
 //                    retrieveData()
                 }
             
         }else{
-            EmailLogIn()
+            SignUpView()
         }
     }
 }

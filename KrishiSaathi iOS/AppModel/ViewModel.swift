@@ -11,7 +11,9 @@ import UIKit
 class ViewModel : ObservableObject {
 
     @Published var username: String = ""
+    @Published var UID: String = ""
     @Published var name: String = ""
     @Published var email: String = ""
     @Published var isUserLoggedIn: Bool = false
+    
 }

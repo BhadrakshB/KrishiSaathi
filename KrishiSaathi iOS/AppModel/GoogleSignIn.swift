@@ -29,9 +29,13 @@ class SignIn_withGoogle_VM: ObservableObject{
                 return
             }
             
+            
             guard
                 let user = user?.user,
                 let idToken = user.idToken else { return }
+            
+            
+            
             
             let accessToken = user.accessToken
             
@@ -45,7 +49,6 @@ class SignIn_withGoogle_VM: ObservableObject{
                 }
                     
                     guard let user = res?.user else { return }
-                    print(user)
                 }
                 
                 

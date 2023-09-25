@@ -10,7 +10,9 @@ import SwiftUI
 
 struct PredictView: View {
         private var data : Data
-    
+        @EnvironmentObject var userData : ViewModel
+        
+    let weatherURL = "weatherURL"
         @State private var selectedCrop = "Select Crop"
         @State private var selectedSeason = "Select Season"
         @State private var selectedState = "Select State"
@@ -18,6 +20,7 @@ struct PredictView: View {
         @State private var annualInput : Double
         @State private var fertilizerInput : Double
         @State private var pesticideInput : Double
+        @State private var yield : Float
     
         init(){
             data = Data()
@@ -25,6 +28,7 @@ struct PredictView: View {
             self.annualInput = 0.0
             self.fertilizerInput = 0.0
             self.pesticideInput = 0.0
+            self.yield = 0.0
         }
         
         var body: some View {
@@ -80,6 +84,28 @@ struct PredictView: View {
             }
             .padding()
         }
+    
+    func fetchData() {
+            guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts") else {
+                return
+            }
+
+            URLSession.shared.dataTask(with: url) { data, _, error in
+                if let data = data {
+                    do {
+                        let decodedData = try JSONDecoder().decode(YieldData.self, from: data)
+                        DispatchQueue.main.async {
+                            self.yield = decodedData.yield_inMetricTons
+                            print(yield)
+                        }
+                    } catch {
+                        print("Error decoding data: \(error)")
+                    }
+                } else if let error = error {
+                    print("Error fetching data: \(error)")
+                }
+            }.resume()
+        }
 }
 
 struct PredictView_Previews: PreviewProvider {
@@ -105,4 +131,6 @@ struct DropdownPicker: View {
             .pickerStyle(MenuPickerStyle())
         }
     }
+    
+    
 }

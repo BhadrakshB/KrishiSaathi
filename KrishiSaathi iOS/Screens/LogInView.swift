@@ -8,12 +8,13 @@
 import SwiftUI
 import Firebase
 
-struct EmailLogIn: View {
+struct LogInView: View {
     
     @State private var showAlert = false
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var navigateToHomeScreen = false
+    @State private var navigateToSignUpView = false
     @EnvironmentObject var userData : ViewModel
     
     var body: some View {
@@ -46,9 +47,26 @@ struct EmailLogIn: View {
                 .cornerRadius(10)
                 .padding(.horizontal)
                        }
+            SignInWithGoogle()
+            
+            Button(action: {
+                navigateToSignUpView.toggle()
+                       }) {
+            Text("Dont have an account. Click here")
+                .foregroundColor(.white)
+                .font(.headline)
+                .padding()
+                .frame(maxWidth: .infinity)
+                .background(Color.blue)
+                .cornerRadius(10)
+                .padding(.horizontal)
+                       }
         }
         .fullScreenCover(isPresented: $navigateToHomeScreen, content: {
-            LogOut()
+            TabsView()
+        })
+        .fullScreenCover(isPresented: $navigateToSignUpView, content: {
+            SignUpView()
         })
         .alert(isPresented: $showAlert) {
             Alert(
@@ -65,6 +83,10 @@ struct EmailLogIn: View {
             if let e = error {
                 showAlert = true
             }else{
+                if let user = Auth.auth().currentUser {
+                    let uid = user.uid
+                    userData.UID = uid
+                }
                 UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
                 navigateToHomeScreen = true
 //                retrieveData()
@@ -75,6 +97,6 @@ struct EmailLogIn: View {
 
 struct EmailLogIn_Previews: PreviewProvider {
     static var previews: some View {
-        EmailLogIn()
+        LogInView()
     }
 }

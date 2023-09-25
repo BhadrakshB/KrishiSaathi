@@ -16,10 +16,13 @@ struct KrishiSaathi_iOSApp: App {
 //        FirebaseApp.configure()
 //    }
     
+    let userData = ViewModel()
+    
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(userData)
         }
     }
 }

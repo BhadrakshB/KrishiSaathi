@@ -24,7 +24,7 @@ struct SignInWithGoogle: View {
                 UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
                 navigateToHomeScreen = true
                        }) {
-            Text("Log In")
+            Text("Sign In With Google")
                 .foregroundColor(.white)
                 .font(.headline)
                 .padding()
@@ -35,7 +35,7 @@ struct SignInWithGoogle: View {
                    }
         }
         .fullScreenCover(isPresented: $navigateToHomeScreen, content: {
-            LogOut()
+            TabsView()
         })
     }
 }

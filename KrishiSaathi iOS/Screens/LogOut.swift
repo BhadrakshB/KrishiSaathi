@@ -26,7 +26,7 @@ struct LogOut: View {
             }
         }
         .fullScreenCover(isPresented: $navigateToEmailLogIn, content: {
-            EmailLogIn()
+            LogInView()
         })
     }
 }

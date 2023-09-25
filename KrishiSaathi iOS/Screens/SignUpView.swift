@@ -8,13 +8,14 @@
 import SwiftUI
 import Firebase
 
-struct EmailSignUp: View {
+struct SignUpView: View {
     @EnvironmentObject var userData : ViewModel
     
     @State private var email: String = ""
     @State private var password: String = ""
     @State var username: String = ""
     @State private var navigateToHomeScreen = false
+    @State private var navigateToLogInView = false
     
     var body: some View {
         VStack{
@@ -55,9 +56,26 @@ struct EmailSignUp: View {
                     .cornerRadius(10)
                     .padding(.horizontal)
             }
+            SignInWithGoogle()
+            
+            Button(action: {
+                navigateToLogInView.toggle()
+            }) {
+                Text("Already have an account. Click Here")
+                    .foregroundColor(.white)
+                    .font(.headline)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color.blue)
+                    .cornerRadius(10)
+                    .padding(.horizontal)
+            }
         }
         .fullScreenCover(isPresented: $navigateToHomeScreen, content: {
-            LogOut()
+            TabsView()
+        })
+        .fullScreenCover(isPresented: $navigateToLogInView, content: {
+            LogInView()
         })
     }
     
@@ -68,6 +86,7 @@ struct EmailSignUp: View {
             }
             else{
                 guard let uid = result?.user.uid else { return }
+                userData.UID = uid
                 UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
                 navigateToHomeScreen = true
                 print(uid)
@@ -79,6 +98,6 @@ struct EmailSignUp: View {
 
 struct EmailSignUp_Previews: PreviewProvider {
     static var previews: some View {
-        EmailSignUp()
+        SignUpView()
     }
 }
