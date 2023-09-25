@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B923B4EB2AC1B1E900F79057 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B923B4EA2AC1B1E800F79057 /* GoogleService-Info.plist */; };
+		B923B4EE2AC1B21D00F79057 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = B923B4ED2AC1B21D00F79057 /* GoogleSignIn */; };
+		B923B4F02AC1B21D00F79057 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B923B4EF2AC1B21D00F79057 /* GoogleSignInSwift */; };
+		B923B4F42AC1B2D800F79057 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B923B4F32AC1B2D800F79057 /* LogInView.swift */; };
 		B95AE63D2AC19EB700E73C9F /* KrishiSaathi_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95AE63C2AC19EB700E73C9F /* KrishiSaathi_iOSApp.swift */; };
 		B95AE63F2AC19EB700E73C9F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95AE63E2AC19EB700E73C9F /* ContentView.swift */; };
 		B95AE6412AC19EB900E73C9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B95AE6402AC19EB900E73C9F /* Assets.xcassets */; };
@@ -14,8 +18,9 @@
 		B95AE64E2AC19EB900E73C9F /* KrishiSaathi_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95AE64D2AC19EB900E73C9F /* KrishiSaathi_iOSTests.swift */; };
 		B95AE6582AC19EB900E73C9F /* KrishiSaathi_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95AE6572AC19EB900E73C9F /* KrishiSaathi_iOSUITests.swift */; };
 		B95AE65A2AC19EB900E73C9F /* KrishiSaathi_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95AE6592AC19EB900E73C9F /* KrishiSaathi_iOSUITestsLaunchTests.swift */; };
-		B95AE6672AC1A3ED00E73C9F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B95AE6662AC1A3ED00E73C9F /* GoogleService-Info.plist */; };
 		B95AE66A2AC1A4A500E73C9F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B95AE6692AC1A4A500E73C9F /* FirebaseAuth */; };
+		B9F53E6D2AC1BB1100D89935 /* GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F53E6C2AC1BB1100D89935 /* GoogleSignIn.swift */; };
+		B9F53E6F2AC1BF7C00D89935 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F53E6E2AC1BF7C00D89935 /* Application.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B923B4EA2AC1B1E800F79057 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B923B4F12AC1B27D00F79057 /* KrishiSaathi-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "KrishiSaathi-iOS-Info.plist"; sourceTree = SOURCE_ROOT; };
+		B923B4F32AC1B2D800F79057 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		B95AE6392AC19EB700E73C9F /* KrishiSaathi iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KrishiSaathi iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B95AE63C2AC19EB700E73C9F /* KrishiSaathi_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KrishiSaathi_iOSApp.swift; sourceTree = "<group>"; };
 		B95AE63E2AC19EB700E73C9F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,7 +54,8 @@
 		B95AE6532AC19EB900E73C9F /* KrishiSaathi iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KrishiSaathi iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B95AE6572AC19EB900E73C9F /* KrishiSaathi_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KrishiSaathi_iOSUITests.swift; sourceTree = "<group>"; };
 		B95AE6592AC19EB900E73C9F /* KrishiSaathi_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KrishiSaathi_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		B95AE6662AC1A3ED00E73C9F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B9F53E6C2AC1BB1100D89935 /* GoogleSignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignIn.swift; sourceTree = "<group>"; };
+		B9F53E6E2AC1BF7C00D89935 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +63,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B923B4F02AC1B21D00F79057 /* GoogleSignInSwift in Frameworks */,
 				B95AE66A2AC1A4A500E73C9F /* FirebaseAuth in Frameworks */,
+				B923B4EE2AC1B21D00F79057 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +86,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B923B4F22AC1B2B700F79057 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				B95AE63E2AC19EB700E73C9F /* ContentView.swift */,
+				B923B4F32AC1B2D800F79057 /* LogInView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		B95AE6302AC19EB700E73C9F = {
 			isa = PBXGroup;
 			children = (
@@ -98,9 +118,11 @@
 		B95AE63B2AC19EB700E73C9F /* KrishiSaathi iOS */ = {
 			isa = PBXGroup;
 			children = (
-				B95AE6662AC1A3ED00E73C9F /* GoogleService-Info.plist */,
+				B9F53E6B2AC1BACC00D89935 /* AppModel */,
+				B923B4F12AC1B27D00F79057 /* KrishiSaathi-iOS-Info.plist */,
+				B923B4EA2AC1B1E800F79057 /* GoogleService-Info.plist */,
 				B95AE63C2AC19EB700E73C9F /* KrishiSaathi_iOSApp.swift */,
-				B95AE63E2AC19EB700E73C9F /* ContentView.swift */,
+				B923B4F22AC1B2B700F79057 /* Screens */,
 				B95AE6402AC19EB900E73C9F /* Assets.xcassets */,
 				B95AE6422AC19EB900E73C9F /* Preview Content */,
 			);
@@ -132,6 +154,15 @@
 			path = "KrishiSaathi iOSUITests";
 			sourceTree = "<group>";
 		};
+		B9F53E6B2AC1BACC00D89935 /* AppModel */ = {
+			isa = PBXGroup;
+			children = (
+				B9F53E6C2AC1BB1100D89935 /* GoogleSignIn.swift */,
+				B9F53E6E2AC1BF7C00D89935 /* Application.swift */,
+			);
+			path = AppModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,6 +181,8 @@
 			name = "KrishiSaathi iOS";
 			packageProductDependencies = (
 				B95AE6692AC1A4A500E73C9F /* FirebaseAuth */,
+				B923B4ED2AC1B21D00F79057 /* GoogleSignIn */,
+				B923B4EF2AC1B21D00F79057 /* GoogleSignInSwift */,
 			);
 			productName = "KrishiSaathi iOS";
 			productReference = B95AE6392AC19EB700E73C9F /* KrishiSaathi iOS.app */;
@@ -225,6 +258,7 @@
 			mainGroup = B95AE6302AC19EB700E73C9F;
 			packageReferences = (
 				B95AE6682AC1A4A500E73C9F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				B923B4EC2AC1B21D00F79057 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			productRefGroup = B95AE63A2AC19EB700E73C9F /* Products */;
 			projectDirPath = "";
@@ -244,7 +278,7 @@
 			files = (
 				B95AE6442AC19EB900E73C9F /* Preview Assets.xcassets in Resources */,
 				B95AE6412AC19EB900E73C9F /* Assets.xcassets in Resources */,
-				B95AE6672AC1A3ED00E73C9F /* GoogleService-Info.plist in Resources */,
+				B923B4EB2AC1B1E900F79057 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,7 +303,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9F53E6F2AC1BF7C00D89935 /* Application.swift in Sources */,
+				B923B4F42AC1B2D800F79057 /* LogInView.swift in Sources */,
 				B95AE63F2AC19EB700E73C9F /* ContentView.swift in Sources */,
+				B9F53E6D2AC1BB1100D89935 /* GoogleSignIn.swift in Sources */,
 				B95AE63D2AC19EB700E73C9F /* KrishiSaathi_iOSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,6 +469,7 @@
 				DEVELOPMENT_TEAM = M46DPRX7BA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "KrishiSaathi-iOS-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -461,6 +499,7 @@
 				DEVELOPMENT_TEAM = M46DPRX7BA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "KrishiSaathi-iOS-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -597,6 +636,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B923B4EC2AC1B21D00F79057 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		B95AE6682AC1A4A500E73C9F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -608,6 +655,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B923B4ED2AC1B21D00F79057 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B923B4EC2AC1B21D00F79057 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		B923B4EF2AC1B21D00F79057 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B923B4EC2AC1B21D00F79057 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
 		B95AE6692AC1A4A500E73C9F /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B95AE6682AC1A4A500E73C9F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
