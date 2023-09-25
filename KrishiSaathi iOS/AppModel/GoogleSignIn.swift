@@ -12,6 +12,7 @@ import GoogleSignIn
 
 
 class SignIn_withGoogle_VM: ObservableObject{
+    @EnvironmentObject var userData : ViewModel
     @Published var isLoginSuccessed = false
     
     func signInWithGoogle() {
@@ -49,6 +50,8 @@ class SignIn_withGoogle_VM: ObservableObject{
                 }
                     
                     guard let user = res?.user else { return }
+                    let uid = res?.user.uid
+                    self.userData.UID = uid!
                 }
                 
                 
