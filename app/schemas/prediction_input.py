@@ -22,3 +22,5 @@ class PredictionRequest(PredictionBase):
     
     class Config:
         orm_mode = True
+        
+
