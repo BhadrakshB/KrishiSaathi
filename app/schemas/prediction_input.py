@@ -17,10 +17,13 @@ class PredictionBase(BaseModel):
         orm_mode = True
     
         
-class PredictionRequest(PredictionBase):
+class PredictionResponse(PredictionBase):
     yield_inMetricTons  : float   
     
     class Config:
         orm_mode = True
+        
+class PredictionRequest(PredictionBase):
+    pass
         
 
