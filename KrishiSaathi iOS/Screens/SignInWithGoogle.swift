@@ -10,7 +10,7 @@ import Firebase
 import GoogleSignIn
 
 
-struct LogInView: View {
+struct SignInWithGoogle: View {
     
     @StateObject private var vm = SignIn_withGoogle_VM()
     
@@ -32,6 +32,6 @@ struct LogInView: View {
 
 struct LogInView_Previews: PreviewProvider {
     static var previews: some View {
-        LogInView()
+        SignInWithGoogle()
     }
 }
