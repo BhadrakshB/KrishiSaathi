@@ -25,6 +25,9 @@
 		B9F53E732AC1C4C400D89935 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F53E722AC1C4C400D89935 /* ViewModel.swift */; };
 		B9F53E752AC1C80A00D89935 /* EmailLogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F53E742AC1C80A00D89935 /* EmailLogIn.swift */; };
 		B9F53E772AC1CA3200D89935 /* LogOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F53E762AC1CA3200D89935 /* LogOut.swift */; };
+		B9F53E792AC1E76C00D89935 /* PredictView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F53E782AC1E76C00D89935 /* PredictView.swift */; };
+		B9F53E7B2AC1EF6800D89935 /* AddDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F53E7A2AC1EF6800D89935 /* AddDetailsView.swift */; };
+		B9F53E7D2AC1F07B00D89935 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F53E7C2AC1F07B00D89935 /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,9 @@
 		B9F53E722AC1C4C400D89935 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		B9F53E742AC1C80A00D89935 /* EmailLogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLogIn.swift; sourceTree = "<group>"; };
 		B9F53E762AC1CA3200D89935 /* LogOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOut.swift; sourceTree = "<group>"; };
+		B9F53E782AC1E76C00D89935 /* PredictView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictView.swift; sourceTree = "<group>"; };
+		B9F53E7A2AC1EF6800D89935 /* AddDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDetailsView.swift; sourceTree = "<group>"; };
+		B9F53E7C2AC1F07B00D89935 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,8 @@
 				B9F53E702AC1C3C500D89935 /* EmailSignUp.swift */,
 				B9F53E742AC1C80A00D89935 /* EmailLogIn.swift */,
 				B9F53E762AC1CA3200D89935 /* LogOut.swift */,
+				B9F53E782AC1E76C00D89935 /* PredictView.swift */,
+				B9F53E7A2AC1EF6800D89935 /* AddDetailsView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -171,6 +179,7 @@
 				B9F53E6C2AC1BB1100D89935 /* GoogleSignIn.swift */,
 				B9F53E6E2AC1BF7C00D89935 /* Application.swift */,
 				B9F53E722AC1C4C400D89935 /* ViewModel.swift */,
+				B9F53E7C2AC1F07B00D89935 /* Data.swift */,
 			);
 			path = AppModel;
 			sourceTree = "<group>";
@@ -320,7 +329,10 @@
 				B9F53E712AC1C3C500D89935 /* EmailSignUp.swift in Sources */,
 				B95AE63F2AC19EB700E73C9F /* ContentView.swift in Sources */,
 				B9F53E752AC1C80A00D89935 /* EmailLogIn.swift in Sources */,
+				B9F53E7B2AC1EF6800D89935 /* AddDetailsView.swift in Sources */,
 				B9F53E772AC1CA3200D89935 /* LogOut.swift in Sources */,
+				B9F53E7D2AC1F07B00D89935 /* Data.swift in Sources */,
+				B9F53E792AC1E76C00D89935 /* PredictView.swift in Sources */,
 				B9F53E6D2AC1BB1100D89935 /* GoogleSignIn.swift in Sources */,
 				B95AE63D2AC19EB700E73C9F /* KrishiSaathi_iOSApp.swift in Sources */,
 				B9F53E732AC1C4C400D89935 /* ViewModel.swift in Sources */,
