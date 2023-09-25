@@ -4,7 +4,7 @@ from pydantic import BaseModel
 
 
 class PredictionBase(BaseModel):
-    user_id : int
+    user_id : str
     crop_name : str
     season  : str
     state  : str

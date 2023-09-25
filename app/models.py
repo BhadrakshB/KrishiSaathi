@@ -11,7 +11,7 @@ class CropsTable(Base):
     __tablename__ = 'crops_table'
     
     id = Column(Integer, primary_key=True, index=True, autoincrement=True, nullable=False)
-    user_id = Column(Integer, ForeignKey("users.id", verbose_name=""))
+    user_id = Column(String, ForeignKey("users.id", verbose_name=""))
     crop_name = Column(String, nullable=False)
     season = Column(String, nullable=False)
     state = Column(String, nullable=False)
@@ -26,7 +26,7 @@ class CropsTable(Base):
 class User(Base):
     __tablename__ = "users"
 
-    id = Column(Integer, primary_key=True, index=True, autoincrement=True, nullable=False)
+    id = Column(String, primary_key=True, nullable=False)
     
     username = Column(String, unique = True,nullable=True)
     email = Column(String, unique=True, index=True, nullable=False)
