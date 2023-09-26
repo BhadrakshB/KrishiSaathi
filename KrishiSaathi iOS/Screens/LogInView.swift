@@ -18,66 +18,74 @@ struct LogInView: View {
     @EnvironmentObject var userData : ViewModel
     
     var body: some View {
-        VStack{
-            
-            SignInWithGoogle()
-                .padding()
-            
-            Rectangle()
-                .frame(height: 1)
-                .padding(.horizontal, 20)
-                .padding(.vertical, 30)
-            
-            
-            TextField("Email", text: $email)
-                            .padding()
-                            .background(Color(.secondarySystemBackground))
-                            .cornerRadius(10)
-                            .padding(.horizontal)
-                            .disableAutocorrection(true)
-                            .autocapitalization(.none)
+        NavigationView{
+            VStack{
+                
+                SignInWithGoogle()
+                    .padding()
+                
+                Rectangle()
+                    .frame(height: 1)
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 30)
+                
+                
+                TextField("Email", text: $email)
+                                .padding()
+                                .background(Color(.secondarySystemBackground))
+                                .cornerRadius(10)
+                                .padding(.horizontal)
+                                .disableAutocorrection(true)
+                                .autocapitalization(.none)
 
-            SecureField("Password", text: $password)
-                .padding()
-                .background(Color(.secondarySystemBackground))
-                .cornerRadius(10)
-                .padding(.horizontal)
-                .disableAutocorrection(true)
-                .autocapitalization(.none)
-            
-            Button(action: {
-                           loginUser()
-                       }) {
-            Text("Log In")
-                .foregroundColor(.white)
-                .font(.headline)
-                .padding()
-                .frame(maxWidth: .infinity)
-                .background(Color.blue)
-                .cornerRadius(10)
-                .padding(.horizontal)
-                       }
-            
-            Button(action: {
-                navigateToSignUpView.toggle()
-                       }) {
-            Text("Dont have an account. Click here")
-                       }
-            
+                SecureField("Password", text: $password)
+                    .padding()
+                    .background(Color(.secondarySystemBackground))
+                    .cornerRadius(10)
+                    .padding(.horizontal)
+                    .disableAutocorrection(true)
+                    .autocapitalization(.none)
+                
+                NavigationLink(destination: WorkInProgressView()) {
+                                    // Wrap your button content inside the NavigationLink
+                                    Text("Forgot Password?")
+                                }
+                    
+                
+                Button(action: {
+                               loginUser()
+                           }) {
+                Text("Log In")
+                    .foregroundColor(.white)
+                    .font(.headline)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color.blue)
+                    .cornerRadius(10)
+                    .padding(.horizontal)
+                           }
+                
+                Button(action: {
+                    navigateToSignUpView.toggle()
+                           }) {
+                Text("Dont have an account. Click here")
+                           }
+                
+            }
+            .fullScreenCover(isPresented: $navigateToHomeScreen, content: {
+                TabsView()
+            })
+            .fullScreenCover(isPresented: $navigateToSignUpView, content: {
+                SignUpView()
+            })
+            .alert(isPresented: $showAlert) {
+                Alert(
+                    title: Text("Login Failed"),
+                    message: Text("Invalid User Credentials"),
+                    dismissButton: .default(Text("OK"))
+                        )
         }
-        .fullScreenCover(isPresented: $navigateToHomeScreen, content: {
-            TabsView()
-        })
-        .fullScreenCover(isPresented: $navigateToSignUpView, content: {
-            SignUpView()
-        })
-        .alert(isPresented: $showAlert) {
-            Alert(
-                title: Text("Login Failed"),
-                message: Text("Invalid User Credentials"),
-                dismissButton: .default(Text("OK"))
-                    )
-                }
+        }
     }
     
     func loginUser(){

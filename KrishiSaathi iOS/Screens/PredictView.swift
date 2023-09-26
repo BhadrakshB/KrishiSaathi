@@ -10,6 +10,7 @@ import SwiftUI
 
 struct PredictView: View {
         private var data : Data
+        @State private var navigateToResultView = false
         @EnvironmentObject var userData : ViewModel
         
     let weatherURL = "weatherURL"
@@ -35,7 +36,7 @@ struct PredictView: View {
             NavigationView{
                 VStack {
                     // Crop Dropdown
-                    DropdownPicker(title: "Drop", selection: $selectedCrop, options: data.cropNames)
+                    DropdownPicker(title: "Crop", selection: $selectedCrop, options: data.cropNames)
                     
                     // Season Dropdown
                     DropdownPicker(title: "Season", selection: $selectedSeason, options: data.croppingSeason)
@@ -102,6 +103,7 @@ struct PredictView: View {
                     // Predict Button
                     Button(action: {
                         fetchData()
+                        navigateToResultView.toggle()
                     }) {
                         Text("Predict")
                             .padding()
@@ -112,6 +114,9 @@ struct PredictView: View {
                     }
                 }
                 .padding()
+                .fullScreenCover(isPresented: $navigateToResultView, content: {
+                    ResultView(yield: yield)
+                })
             }
             .navigationTitle("Predict Yield")
         }

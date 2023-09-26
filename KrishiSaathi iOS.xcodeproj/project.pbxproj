@@ -23,6 +23,8 @@
 		B97966942AC208C600EC99D1 /* YieldData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97966932AC208C600EC99D1 /* YieldData.swift */; };
 		B97966982AC2267A00EC99D1 /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97966972AC2267A00EC99D1 /* TabsView.swift */; };
 		B979669A2AC22E0800EC99D1 /* DropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97966992AC22E0800EC99D1 /* DropDownView.swift */; };
+		B9C6D5EF2AC2AF8D00A3F16B /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C6D5EE2AC2AF8D00A3F16B /* ResultView.swift */; };
+		B9C6D5F12AC2B5DA00A3F16B /* WorkInProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C6D5F02AC2B5DA00A3F16B /* WorkInProgressView.swift */; };
 		B9F53E6D2AC1BB1100D89935 /* GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F53E6C2AC1BB1100D89935 /* GoogleSignIn.swift */; };
 		B9F53E6F2AC1BF7C00D89935 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F53E6E2AC1BF7C00D89935 /* Application.swift */; };
 		B9F53E712AC1C3C500D89935 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F53E702AC1C3C500D89935 /* SignUpView.swift */; };
@@ -69,6 +71,8 @@
 		B97966932AC208C600EC99D1 /* YieldData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YieldData.swift; sourceTree = "<group>"; };
 		B97966972AC2267A00EC99D1 /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
 		B97966992AC22E0800EC99D1 /* DropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownView.swift; sourceTree = "<group>"; };
+		B9C6D5EE2AC2AF8D00A3F16B /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		B9C6D5F02AC2B5DA00A3F16B /* WorkInProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkInProgressView.swift; sourceTree = "<group>"; };
 		B9F53E6C2AC1BB1100D89935 /* GoogleSignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignIn.swift; sourceTree = "<group>"; };
 		B9F53E6E2AC1BF7C00D89935 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		B9F53E702AC1C3C500D89935 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -120,6 +124,8 @@
 				B9F53E7A2AC1EF6800D89935 /* AddDetailsView.swift */,
 				B97966972AC2267A00EC99D1 /* TabsView.swift */,
 				B97966992AC22E0800EC99D1 /* DropDownView.swift */,
+				B9C6D5EE2AC2AF8D00A3F16B /* ResultView.swift */,
+				B9C6D5F02AC2B5DA00A3F16B /* WorkInProgressView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -349,6 +355,8 @@
 				B97966982AC2267A00EC99D1 /* TabsView.swift in Sources */,
 				B9F53E792AC1E76C00D89935 /* PredictView.swift in Sources */,
 				B9F53E6D2AC1BB1100D89935 /* GoogleSignIn.swift in Sources */,
+				B9C6D5EF2AC2AF8D00A3F16B /* ResultView.swift in Sources */,
+				B9C6D5F12AC2B5DA00A3F16B /* WorkInProgressView.swift in Sources */,
 				B97966942AC208C600EC99D1 /* YieldData.swift in Sources */,
 				B95AE63D2AC19EB700E73C9F /* KrishiSaathi_iOSApp.swift in Sources */,
 				B9F53E732AC1C4C400D89935 /* ViewModel.swift in Sources */,

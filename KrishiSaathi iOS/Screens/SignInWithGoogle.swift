@@ -20,9 +20,14 @@ struct SignInWithGoogle: View {
     var body: some View {
         VStack {
             Button(action: {
-                vm.signInWithGoogle()
-                UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
-                navigateToHomeScreen = true
+                vm.signInWithGoogle { success in
+                        if success {
+                            UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+                            navigateToHomeScreen = true
+                        } else {
+                            // Handle sign-in failure if needed
+                        }
+                    }
             }) {
                 HStack {
                     Spacer()

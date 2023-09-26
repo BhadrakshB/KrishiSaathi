@@ -12,8 +12,12 @@ struct AddDetailsView: View {
     
     @State private var image: UIImage?
     @State private var name: String = ""
+    @State private var phone: String = ""
+    @State private var land: String = ""
+    @State private var city: String = ""
     @State private var weatherAlerts = true
     @State private var showImagePicker = false
+    @State private var navigateToPredictView = false
     
     var body: some View {
         VStack{
@@ -33,17 +37,17 @@ struct AddDetailsView: View {
             .disableAutocorrection(true)
             .autocapitalization(.none)
             
-            TextField("Phone Number", text: $name)
+            TextField("Phone Number", text: $phone)
             .padding()
             .disableAutocorrection(true)
             .autocapitalization(.none)
             
-            TextField("Land Size", text: $name)
+            TextField("Land Size", text: $land)
             .padding()
             .disableAutocorrection(true)
             .autocapitalization(.none)
             
-            TextField("Cityname", text: $name)
+            TextField("Cityname", text: $city)
             .padding()
             .disableAutocorrection(true)
             .autocapitalization(.none)
@@ -62,7 +66,7 @@ struct AddDetailsView: View {
                         }
             
             Button(action: {
-                
+                navigateToPredictView.toggle()
                        }) {
             Text("Continue")
                 .foregroundColor(.white)
@@ -75,6 +79,9 @@ struct AddDetailsView: View {
             }
             
         }
+        .fullScreenCover(isPresented: $navigateToPredictView, content: {
+            TabsView()
+        })
     }
 }
 

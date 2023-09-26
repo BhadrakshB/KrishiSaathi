@@ -15,5 +15,9 @@ class ViewModel : ObservableObject {
     @Published var name: String = ""
     @Published var email: String = ""
     @Published var isUserLoggedIn: Bool = false
+    @Published var userImage: UIImage?
     
+    func changeUid(text : String){
+        self.UID = text
+    }
 }

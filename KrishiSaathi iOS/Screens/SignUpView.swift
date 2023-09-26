@@ -16,6 +16,7 @@ struct SignUpView: View {
     @State var username: String = ""
     @State private var navigateToHomeScreen = false
     @State private var navigateToLogInView = false
+    @State private var navigateAddDetailsView = false
     
     var body: some View {
         VStack{
@@ -81,6 +82,9 @@ struct SignUpView: View {
         .fullScreenCover(isPresented: $navigateToLogInView, content: {
             LogInView()
         })
+        .fullScreenCover(isPresented: $navigateAddDetailsView, content: {
+            AddDetailsView()
+        })
     }
     
     func registerUser(){
@@ -92,7 +96,7 @@ struct SignUpView: View {
                 guard let uid = result?.user.uid else { return }
                 userData.UID = uid
                 UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
-                navigateToHomeScreen = true
+                navigateAddDetailsView = true
                 print(uid)
             }
         }

@@ -15,8 +15,10 @@ class SignIn_withGoogle_VM: ObservableObject{
     @EnvironmentObject var userData : ViewModel
     @Published var isLoginSuccessed = false
     
-    func signInWithGoogle() {
-        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+    func signInWithGoogle(completion: @escaping (Bool) -> Void) {
+        guard let clientID = FirebaseApp.app()?.options.clientID else {
+            completion(false)
+            return }
         
         // Create Google Sign In configuration object.
         let config = GIDConfiguration(clientID: clientID)
@@ -27,13 +29,17 @@ class SignIn_withGoogle_VM: ObservableObject{
             
             if let error = error {
                 print(error.localizedDescription)
+                completion(false)
                 return
             }
             
             
             guard
                 let user = user?.user,
-                let idToken = user.idToken else { return }
+                let idToken = user.idToken else {
+                completion(false)
+                return
+            }
             
             
             
@@ -46,17 +52,19 @@ class SignIn_withGoogle_VM: ObservableObject{
             Auth.auth().signIn (with: credential) { res, error in
                 if let error = error {
                     print (error.localizedDescription)
+                    completion(false)
                     return
                 }
                     
-                    guard let user = res?.user else { return }
+                    guard let user = res?.user else {
+                        completion(false)
+                        return
+                        
+                    }
                     let uid = res?.user.uid
-                    self.userData.UID = uid!
+                    UserDefaults.standard.set(uid, forKey: "uid")
+                    completion(true)
                 }
-                
-                
-                
-                
             }
         }
     }

@@ -28,11 +28,11 @@ struct TabsView: View {
                 
             //MARK: - FEEDVIEW
             NavigationView {
-//                FeedView()
+                WorkInProgressView()
             }
                 .tabItem {
                     Image(systemName: "book.fill")
-                    Text("Past")
+                    Text("Saved")
                 }
                 
             //MARK: - BROWSEVIEW
