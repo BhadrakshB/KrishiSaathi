@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "328506790331",
+    "project_id": "krishisaathi-46977",
+    "storage_bucket": "krishisaathi-46977.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:328506790331:android:08c9498d45811bd17b749e",
+        "android_client_info": {
+          "package_name": "com.kys.krishisaathiapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "328506790331-1t0ctjvpan1d81rg0h9nv4khaaovn0tp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kys.krishisaathiapp",
+            "certificate_hash": "03042088993582268d8be29036360a4e5302bae6"
+          }
+        },
+        {
+          "client_id": "328506790331-2cncigo7mcjki4s3npds8fqse1ecvq2e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSdkanT6dyVdd-JscG7xXdCYZpYHijeqs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "328506790331-2cncigo7mcjki4s3npds8fqse1ecvq2e.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "328506790331-ujcf22ia6ci9rci5f8kaacftfjufgr7p.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.rishabhlalwani.KrishiSaathi-iOS"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
