@@ -8,5 +8,5 @@
 import Foundation
 
 struct YieldData: Codable{
-    let yield_inMetricTons : Float
+    let cod : String
 }

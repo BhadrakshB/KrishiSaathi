@@ -21,6 +21,7 @@ struct LogInView: View {
         VStack{
             
             SignInWithGoogle()
+                .padding()
             
             Rectangle()
                 .frame(height: 1)

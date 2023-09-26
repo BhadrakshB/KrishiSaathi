@@ -20,7 +20,7 @@ struct PredictView: View {
         @State private var annualInput : Double
         @State private var fertilizerInput : Double
         @State private var pesticideInput : Double
-        @State private var yield : Float
+        @State private var yield : String
     
         init(){
             data = Data()
@@ -28,7 +28,7 @@ struct PredictView: View {
             self.annualInput = 0.0
             self.fertilizerInput = 0.0
             self.pesticideInput = 0.0
-            self.yield = 0.0
+            self.yield = ""
         }
         
         var body: some View {
@@ -101,8 +101,7 @@ struct PredictView: View {
                     
                     // Predict Button
                     Button(action: {
-                        // Add your prediction logic here
-                        print("Predict button tapped")
+                        fetchData()
                     }) {
                         Text("Predict")
                             .padding()
@@ -118,7 +117,7 @@ struct PredictView: View {
         }
     
     func fetchData() {
-            guard let url = URL(string: "api.openweathermap.org/data/2.5/forecast?appid={{appid}}&q=Orai") else {
+            guard let url = URL(string: "https://api.openweathermap.org/data/2.5/forecast?appid=99fe447cde2b0fb97ac0d443348f4005&q=Orai") else {
                 return
             }
 
@@ -127,7 +126,7 @@ struct PredictView: View {
                     do {
                         let decodedData = try JSONDecoder().decode(YieldData.self, from: data)
                         DispatchQueue.main.async {
-                            self.yield = decodedData.yield_inMetricTons
+                            self.yield = decodedData.cod
                             print(yield)
                         }
                     } catch {
