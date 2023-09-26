@@ -12,6 +12,8 @@ struct AddDetailsView: View {
     
     @State private var image: UIImage?
     @State private var name: String = ""
+    @State private var weatherAlerts = true
+    @State private var showImagePicker = false
     
     var body: some View {
         VStack{
@@ -28,9 +30,49 @@ struct AddDetailsView: View {
             
             TextField("Name", text: $name)
             .padding()
-            .disableAutocorrection(true) // Disable autocorrect
+            .disableAutocorrection(true)
             .autocapitalization(.none)
             
+            TextField("Phone Number", text: $name)
+            .padding()
+            .disableAutocorrection(true)
+            .autocapitalization(.none)
+            
+            TextField("Land Size", text: $name)
+            .padding()
+            .disableAutocorrection(true)
+            .autocapitalization(.none)
+            
+            TextField("Cityname", text: $name)
+            .padding()
+            .disableAutocorrection(true)
+            .autocapitalization(.none)
+            
+            Toggle("Send me weather alerts", isOn: $weatherAlerts)
+                        .padding()
+            
+            Button(action: {
+                self.showImagePicker = true
+            }) {
+                Text("Choose Image")
+            }
+            .padding()
+            .sheet(isPresented: $showImagePicker) {
+                            ImagePicker(image: self.$image, isShown: self.$showImagePicker)
+                        }
+            
+            Button(action: {
+                
+                       }) {
+            Text("Continue")
+                .foregroundColor(.white)
+                .font(.headline)
+                .padding()
+                .frame(maxWidth: .infinity)
+                .background(Color.blue)
+                .cornerRadius(10)
+                .padding(.horizontal)
+            }
             
         }
     }
@@ -39,5 +81,44 @@ struct AddDetailsView: View {
 struct AddDetailsView_Previews: PreviewProvider {
     static var previews: some View {
         AddDetailsView()
+    }
+}
+
+struct ImagePicker: UIViewControllerRepresentable {
+    @Binding var image: UIImage?
+    @Binding var isShown: Bool
+
+    func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = context.coordinator
+        return imagePicker
+    }
+
+    func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<ImagePicker>) {
+
+    }
+
+    func makeCoordinator() -> Coordinator {
+        return Coordinator(self)
+    }
+
+    class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+        let parent: ImagePicker
+
+        init(_ parent: ImagePicker) {
+            self.parent = parent
+        }
+
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            if let selectedImage = info[.originalImage] as? UIImage {
+                self.parent.image = selectedImage
+            }
+            self.parent.isShown = false
+        }
+
+        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+            self.parent.isShown = false
+        }
     }
 }

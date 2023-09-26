@@ -32,61 +32,93 @@ struct PredictView: View {
         }
         
         var body: some View {
-            VStack {
-                // Crop Dropdown
-                DropdownPicker(title: "Crop", selection: $selectedCrop, options: data.cropNames)
-                
-                // Season Dropdown
-                DropdownPicker(title: "Season", selection: $selectedSeason, options: data.croppingSeason)
-                
-                // State Dropdown
-                DropdownPicker(title: "State", selection: $selectedState, options: data.states)
-                
-                // Area Input
-                HStack {
-                    Text("Area")
-                    TextField("Area (acres)", value: $areaInput, formatter: NumberFormatter())
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
+            NavigationView{
+                VStack {
+                    // Crop Dropdown
+                    DropdownPicker(title: "Drop", selection: $selectedCrop, options: data.cropNames)
+                    
+                    // Season Dropdown
+                    DropdownPicker(title: "Season", selection: $selectedSeason, options: data.croppingSeason)
+                    
+                    // State Dropdown
+                    DropdownPicker(title: "State", selection: $selectedState, options: data.states)
+                    
+                    // Area Input
+                    HStack {
+                        Text("Area")
+                        Spacer()
+                        TextField("Area (acres)", value: $areaInput, formatter: NumberFormatter())
+                            .padding()
+                            .background(Color(.secondarySystemBackground))
+                            .cornerRadius(10)
+                            .padding(.horizontal)
+                            .disableAutocorrection(true)
+                            .autocapitalization(.none)
+                            .frame(width: 200)
+                    }
+                    
+                    // Annual Input
+                    HStack {
+                        Text("Rainfall")
+                        Spacer()
+                        TextField("Annual (float)", value: $annualInput, formatter: NumberFormatter())
+                            .padding()
+                            .background(Color(.secondarySystemBackground))
+                            .cornerRadius(10)
+                            .padding(.horizontal)
+                            .disableAutocorrection(true)
+                            .autocapitalization(.none)
+                            .frame(width: 200)
+                    }
+                    
+                    // Fertilizer Input
+                    HStack {
+                        Text("Fertilizer")
+                        Spacer()
+                        TextField("Fertilizer (float)", value: $fertilizerInput, formatter: NumberFormatter())
+                            .padding()
+                            .background(Color(.secondarySystemBackground))
+                            .cornerRadius(10)
+                            .padding(.horizontal)
+                            .disableAutocorrection(true)
+                            .autocapitalization(.none)
+                            .frame(width: 200)
+                    }
+                    
+                    // Pesticide Input
+                    HStack {
+                        Text("Pesticide")
+                        Spacer()
+                        TextField("Pesticide (float)", value: $pesticideInput, formatter: NumberFormatter())
+                            .padding()
+                            .background(Color(.secondarySystemBackground))
+                            .cornerRadius(10)
+                            .padding(.horizontal)
+                            .disableAutocorrection(true)
+                            .autocapitalization(.none)
+                            .frame(width: 200)
+                    }
+                    
+                    // Predict Button
+                    Button(action: {
+                        // Add your prediction logic here
+                        print("Predict button tapped")
+                    }) {
+                        Text("Predict")
+                            .padding()
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                            .padding(.top, 10)
+                    }
                 }
-                
-                // Annual Input
-                HStack {
-                    Text("Rainfall")
-                    TextField("Annual (float)", value: $annualInput, formatter: NumberFormatter())
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                }
-                
-                // Fertilizer Input
-                HStack {
-                    Text("Fertilizer")
-                    TextField("Fertilizer (float)", value: $fertilizerInput, formatter: NumberFormatter())
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                }
-                
-                // Pesticide Input
-                HStack {
-                    Text("Pesticide")
-                    TextField("Pesticide (float)", value: $pesticideInput, formatter: NumberFormatter())
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                }
-                
-                // Predict Button
-                Button(action: {
-                    // Add your prediction logic here
-                    print("Predict button tapped")
-                }) {
-                    Text("Predict")
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }
+                .padding()
             }
-            .padding()
+            .navigationTitle("Predict Yield")
         }
     
     func fetchData() {
-            guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts") else {
+            guard let url = URL(string: "api.openweathermap.org/data/2.5/forecast?appid={{appid}}&q=Orai") else {
                 return
             }
 
@@ -120,17 +152,20 @@ struct DropdownPicker: View {
     var options: [String]
 
     var body: some View {
-        VStack(alignment: .leading) {
+        HStack(alignment: .top) {
             Text(title)
-                .font(.headline)
+                .padding(.bottom, 30)
+            Spacer()
             Picker(selection: $selection, label: Text("")) {
                 ForEach(options, id: \.self) { option in
                     Text(option)
                 }
             }
+            .padding(.bottom, 20)
             .pickerStyle(MenuPickerStyle())
         }
     }
     
     
 }
+

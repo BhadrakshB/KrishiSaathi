@@ -19,6 +19,14 @@ struct SignUpView: View {
     
     var body: some View {
         VStack{
+            
+            SignInWithGoogle()
+            
+            Rectangle()
+                .frame(height: 1)
+                .padding(.horizontal, 20)
+                .padding(.vertical, 30)
+            
             TextField("Username", text: $username)
                 .padding()
                 .background(Color(.secondarySystemBackground))
@@ -56,20 +64,15 @@ struct SignUpView: View {
                     .cornerRadius(10)
                     .padding(.horizontal)
             }
-            SignInWithGoogle()
             
             Button(action: {
                 navigateToLogInView.toggle()
             }) {
-                Text("Already have an account. Click Here")
-                    .foregroundColor(.white)
-                    .font(.headline)
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(Color.blue)
-                    .cornerRadius(10)
-                    .padding(.horizontal)
+                    
+                    Text("Already have an account. Click Here")
+                        
             }
+            
         }
         .fullScreenCover(isPresented: $navigateToHomeScreen, content: {
             TabsView()

@@ -22,17 +22,27 @@ struct SignInWithGoogle: View {
             Button(action: {
                 vm.signInWithGoogle()
                 UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+                
                 navigateToHomeScreen = true
-                       }) {
-            Text("Sign In With Google")
-                .foregroundColor(.white)
-                .font(.headline)
+            }) {
+                HStack {
+                    Image("Google")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 30, height: 30)
+                        .padding(.leading, 20)
+                    
+                    Text("Continue with Google")
+                        .foregroundColor(.black)
+                        .font(.headline)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                }
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.black, lineWidth: 2))
                 .padding()
-                .frame(maxWidth: .infinity)
-                .background(Color.blue)
-                .cornerRadius(10)
-                .padding(.horizontal)
-                   }
+            }
         }
         .fullScreenCover(isPresented: $navigateToHomeScreen, content: {
             TabsView()
